@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ecommerce Next.js con MongoDB por Octavio Guerrero
 
-## Getting Started
+## Demo
+Explora el demo [Barca store](https://barca-store-ihfc.vercel.app/)
 
-First, run the development server:
+Credeciales:
+Usuario: adal24
+Contraseña: adal24
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Este es un proyecto de ecommerce desarrollado con **Next.js** y **MongoDB** que permite a los usuarios iniciar sesión, agregar productos a su carrito, recargar saldo y realizar compras.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Funcionalidades principales
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Inicio de sesión**: Los usuarios pueden iniciar sesión para gestionar sus compras.
+- **Recarga de saldo**: Los usuarios pueden recargar saldo en su cuenta para realizar compras dentro del ecommerce.
+- **Control de carrito de compras**: Los usuarios pueden agregar y eliminar productos del carrito antes de finalizar la compra.
+- **Proceso de compra**: Los usuarios pueden realizar compras con su saldo disponible, y el sistema actualiza su historial de compras.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tecnologías utilizadas
 
-## Learn More
+- **Next.js**: Framework de React para aplicaciones web.
+- **MongoDB**: Base de datos NoSQL para almacenar información de productos, usuarios y transacciones.
+- **Mongoose**: ODM (Object Data Modeling) para MongoDB, que facilita la interacción entre el código de JavaScript y la base de datos.
+- **Node.js**: Entorno de ejecución para el backend.
+- **JWT (JSON Web Tokens)**: Autenticación basada en tokens para el manejo seguro de sesiones de usuario.
+- **Tailwind CSS**: Framework CSS para estilos.
 
-To learn more about Next.js, take a look at the following resources:
+## Instalación y configuración
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clonar el repositorio:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   git clone https://github.com/octav20/barcaStore.git
+   cd ecommerce-nextjs
 
-## Deploy on Vercel
+2. Instalar las dependencias:
+   
+   ```bash
+   npm install
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Configurar las variables de entorno:
+    Crear un archivo .env.local en el directorio raíz y añadir las siguientes variables:
+    ```bash
+    MONGODB_URI=mongodb+srv://<usuario>:<contraseña>@cluster.mongodb.net/tu-base-de-datos
+    NEXTAUTH_SECRET=tu_secreto_jwt
+    NEXT_PUBLIC_API_URL = http://tuUrl/api o http://localhost:300
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Ejecutar el proyecto en modo desarrollo:
+   ```bash
+   npm run dev
+ 
+
+## Estructura de la base de datos
+
+### Producto
+    ```bash
+    {
+     "_id": {
+    "$oid": "66f3cc101a99474301bd5298"
+    },
+    "id": "1",
+    "name": "Jersey Barca local",
+    "category": {
+        "name": "Category Name"
+    },
+    "price": 100,
+    "images": [
+        {
+        "id": "1",
+        "url": "/img/barca-jersey.png"
+        },
+        {
+        "id": "2",
+        "url": "/img/barca-jersey2.png"
+        }
+    ]
+    }
+### Usuario
+    ```bash
+    {
+    "_id": {
+        "$oid": "66f887fde6e80750ac63601d"
+    },
+    "name": "Profe adal",
+    "user": "adal24",
+    "password": "adal24",
+    "credit": 0
+    }
+
+### Explora mas sobre MongoDB y NextJs
+[MongoDb]("https://cloud.mongodb.com/")
+[NextJs]("https://nextjs.org/")
