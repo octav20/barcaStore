@@ -88,5 +88,5 @@ Este es un proyecto de ecommerce desarrollado con **Next.js** y **MongoDB** que 
     }
 
 ### Explora mas sobre MongoDB y NextJs
-[MongoDb]("https://cloud.mongodb.com/")
-[NextJs]("https://nextjs.org/")
+[MongoDb](https://cloud.mongodb.com/)
+[NextJs](https://nextjs.org/)
